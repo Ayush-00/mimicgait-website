@@ -148,7 +148,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Gait recognition is an important biometric technique over large distances. State-of-the-art gait recognition systems perform very well in controlled environments at close range. Recently, there has been an increased interest in gait recognition in the wild prompted by the collection of outdoor, more challenging datasets containing variations in terms of illumination, pitch angles and distances. An important problem in these environments is that of occlusion, where the subject is partially blocked from camera view. 
+            While important, this problem has received little attention. Thus, we propose <strong>MimicGait</strong>, a <em>model-agnostic</em> approach for gait recognition in the presence of occlusions. We train the network using a <em>multi-instance correlational distillation loss</em> to capture both inter-sequence and intra-sequence correlations in the occluded gait patterns of a subject, utilizing an auxiliary Visibility Estimation Network to guide the training of the proposed mimic network. We demonstrate the effectiveness of our approach on challenging real-world datasets like GREW, Gait3D and BRIAR.
           </p>
         </div>
       </div>
@@ -197,7 +198,27 @@
 </section>
 <!-- End image carousel -->
 
-
+<!-- Text and Image Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <figure class="image">
+          <img src="static/images/synthetic_occ.png" alt="Synthetic occlusions">
+        </figure>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Synthetic occlusions</h2>
+        <p class="has-text-justified">
+          Our approach leverages advanced techniques in correlational knowledge distillation to improve gait recognition in occluded environments. By utilizing a multi-instance correlational distillation loss, we capture both inter-sequence and intra-sequence correlations, ensuring robust performance even in challenging conditions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Text and Image Section -->
 
 
 <!-- Youtube video -->
@@ -292,8 +313,6 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
