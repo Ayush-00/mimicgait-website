@@ -25,7 +25,7 @@
 
 
   <title>MimicGait WACV 2025</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/Main_cropped.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -73,7 +73,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="static/pdfs/mimicgait.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -84,7 +84,7 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="static/pdfs/mimicgait_supplementary.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -164,45 +164,81 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <div class="item has-text-centered">
+          <!-- Your image here -->
+          <img src="static/images/BRIAR_more_examples.png" alt="RGB examples"/>
+          <h2 class="subtitle has-text-centered">
+            Sample RGB images from the BRIAR dataset.
+          </h2>
+        </div>
+        <div class="item has-text-centered">
+          <!-- Your image here -->
+          <img src="static/images/synthetic_occ.png" alt="synthetic occ"/>
+          <h2 class="subtitle has-text-centered">
+            Occluded examples of silhouettes from GREW dataset.
+          </h2>
+        </div>
+        <!-- <div class="item has-text-centered">
+          <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Third image description.
+          </h2>
+        </div>
+        <div class="item has-text-centered">
+          <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Fourth image description.
+          </h2>
+        </div> -->
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
+</section>
 </div>
 </section>
 <!-- End image carousel -->
+
+
+
+
+
+<!-- Overview section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <figure class="image">
+          <img src="static/images/Main_cropped.png" alt="main methodology figure">
+        </figure>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        
+        <p class="has-text-justified">
+            We try to learn the correlations between the motion of different body parts through our approach, so that when some body parts are missing, we are able to utilize the observable motion to extract gait features even from the occluded body.
+            We train a 'mimic network' to replicate the behavior of a teacher model that has been trained on unoccluded gait sequences to generate ideal gait features. The mimic network is designed to handle occluded sequences by learning from the predictions of the teacher model. 
+            This is achieved through a process called correlational knowledge distillation, where the mimic network is trained to capture both inter-sequence and intra-sequence correlations in the occluded gait patterns. The auxiliary Visibility Estimation Network helps guide the training by providing visibility scores for the occluded regions, ensuring that the mimic network focuses on the important parts of the input.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Text and Image Section -->
+
+
+
+
+
+
 
 <!-- Text and Image Section -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Synthetic occlusions</h2>
         <figure class="image">
           <img src="static/images/synthetic_occ.png" alt="Synthetic occlusions">
         </figure>
@@ -210,15 +246,82 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3 has-text-centered">Synthetic occlusions</h2>
+        
         <p class="has-text-justified">
-          Our approach leverages advanced techniques in correlational knowledge distillation to improve gait recognition in occluded environments. By utilizing a multi-instance correlational distillation loss, we capture both inter-sequence and intra-sequence correlations, ensuring robust performance even in challenging conditions.
+            Occlusions can be classified as consistent (static) or dynamic (changing). Consistent occlusions occur due to obstacles like sidewalks or bad camera angles, while dynamic occlusions happen when objects or people temporarily block the subject.
+
+            We simulate both types by placing stationary or moving black patches on input frames. Consistent occlusions remove the top, bottom, or middle part of the frame. We focus on top and bottom occlusions in our main results and evaluate generalizability with middle and dynamic occlusions.
+
+            During training and evaluation, occlusions are introduced randomly, covering 40%-60% of the frame. More details are in the supplementary material.
         </p>
       </div>
     </div>
   </div>
 </section>
 <!-- End Text and Image Section -->
+
+
+<!-- Evaluation carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Evaluation</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item has-text-centered">
+          <!-- Your image here -->
+          <img src="static/images/MimicGait WACV 2025-Probe gallery matching visualize.drawio.png" alt="RGB examples"/>
+          <h2 class="subtitle has-text-centered">
+            Rank-Retrieval metric.
+          </h2>
+        </div>
+        <div class="item has-text-centered">
+          <!-- Your image here -->
+          <img src="static/images/MimicGait_RP_visualization.png" alt="synthetic occ"/>
+          <h2 class="subtitle has-text-centered">
+            Relative performance (RP) metric.
+          </h2>
+        </div>
+        <div class="item has-text-centered">
+          <img src="static/images/Generalizability Adaptability.png" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Generalizability and Adaptability tests on new occlusion types.
+          </h2>
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Our evaluation consists of two metrics: Rank-retrieval accuracy and our new proposed metric Relative Performance (RP).
+          Rank-retrieval is an absolute measure of performance, which might be affected by factors like strength of backbone. However, we want to evaluate a model-agnostic approach (like MimicGait), and the evaluation should not be affected by the strength of the backbone. Hence, we normalize rank-retrieval accuracy by the strength of the backbone, and call it RP.
+        </p>
+        <p>
+          We also evaluate the generalizability and adaptability of our approach by testing on new occlusion types like middle occlusions and dynamic occlusions. We show that our approach is able to generalize to new occlusion types and is able to also able to adapt to new occlusions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Ablations section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Ablations</h2>
+        <figure class="image">
+            <img src="static/images/ablations.png" alt="Ablations" style="width: 50%; display: block; margin-left: auto; margin-right: auto;">
+        </figure>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <p class="has-text-justified">
+            We perform ablation studies on the proposed approach, to test the importance of the individual components - the mimic network, and the two proxy tasks which the visibility estimation network is trained on. We find that removing the visibility estimation network leads to a significant drop in performance, highlighting its importance in guiding the mimic network. Additionally, we observe that training the visibility estimation network on both proxy tasks results in better performance compared to training on a single task.
+        </p>
+      </div>
+    </div>
+  </div>
 
 
 <!-- Youtube video -->
@@ -232,7 +335,7 @@
           
           <div class="publication-video">
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://youtu.be/ynuN_tUorvk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -243,28 +346,28 @@
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
+        
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
+           
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
+            
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -272,7 +375,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -286,7 +389,7 @@
     <div class="container">
       <h2 class="title">Poster</h2>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/poster.pdf" width="100%" height="550">
           </iframe>
         
       </div>
@@ -299,7 +402,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @inproceedings{gupta2025wacv,
+          title={MimicGait: A Model Agnostic approach for Occluded Gait Recognition using Correlational Knowledge Distillation},
+          author={Ayush Gupta and Rama Chellappa},
+          booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+          year={2025}
+        }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
